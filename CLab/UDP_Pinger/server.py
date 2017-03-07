@@ -2,7 +2,7 @@
 
 import random
 import sys
-from socket import* 
+from socket import*
 
 if len(sys.argv) != 2:
 	print "No port number entered"
@@ -11,11 +11,10 @@ if len(sys.argv) != 2:
 #create a UDP socket for the server
 serversocket = socket(AF_INET, SOCK_DGRAM)
 
-serversocket.bind((' ', int(sys.argv[1])))
+serversocket.bind(('',int(sys.argv[1])))
 
-while True: 
-
-	rand = ranom.randint(0,10)
+while True:
+	rand = random.randint(0,10)
 	message, address = serversocket.recvfrom(1024)
 	message = message.upper()
 	if rand<4:
